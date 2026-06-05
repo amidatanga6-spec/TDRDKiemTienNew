@@ -1,18 +1,16 @@
 import { createBrowserRouter } from 'react-router';
-import Home from '@/pages/home';
 import Index from '@/pages/index';
 import NotFound from '@/pages/not-found';
 
 export const PATHS = {
     INDEX: '/',
-    HOME: '/home',
     TIMEACTIVE: '/live'
 };
 
 const router = createBrowserRouter([
     {
-        path: PATHS.HOME,
-        element: <Home />
+        path: PATHS.INDEX,
+        element: <NotFound />
     },
 
     {
